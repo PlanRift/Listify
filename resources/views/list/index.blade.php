@@ -33,7 +33,7 @@
         <td class="py-3">{{ $l->description }}</td>
         <td class="text-end fs-4">
           <a href="{{ url("list/{$l->slug}/edit")}}"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
-          <button type="button" class="btn" style="--bs-btn-padding-y: .3rem; --bs-btn-padding-x: .3rem;" data-title="{{ $l->title }}" data-slug="{{ $l->slug }}">
+          <button type="button" class="btn delete-btn" style="--bs-btn-padding-y: .3rem; --bs-btn-padding-x: .3rem;" data-title="{{ $l->title }}" data-slug="{{ $l->slug }}">
             <i class="fa-solid fs-3 fa-square-xmark text-danger"></i>
           </button>
         </td>
