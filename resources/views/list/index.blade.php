@@ -7,19 +7,31 @@
   <table class="table table-dark my-3 mx-auto text-start">
     <thead>
       <tr class="table-active">
-        <th scope="col" class="text-center">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Description</th>
-        <th scope="col"></th>
+        <thead>
+          <tr class="table-active">
+            <th scope="col" class="text-center ">
+              <a class="link-underline link-underline-opacity-0 text-white" href="{{ url()->current() }}?sort_by=id&sort_order={{ $sort_by == 'id' && $sort_order == 'asc' ? 'desc' : 'asc' }}">#</a>
+            </th>
+            <th scope="col">
+              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=title&sort_order={{ $sort_by == 'title' && $sort_order == 'asc' ? 'desc' : 'asc' }}">First</a>
+            </th>
+            <th scope="col">
+              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=description&sort_order={{ $sort_by == 'description' && $sort_order == 'asc' ? 'desc' : 'asc' }}">Description</a>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+
       </tr>
     </thead>
     <tbody>
       @foreach($list as $key => $l)
       <tr>
-        <th scope="row" class="py-3 text-center">{{ $key + 1 }}</th>
+        <th scope="row" class="py-3 text-center">{{ $l->id }}</th>
+
         <td class="py-3">{{ $l->title }}</td>
         <td class="py-3">{{ $l->description }}</td>
-        <td class="text-end fs-4 ">
+        <td class="text-end fs-4">
           <a href="{{ url("list/{$l->slug}/edit")}}"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
           <button type="button" class="btn" style="--bs-btn-padding-y: .3rem; --bs-btn-padding-x: .3rem;" data-title="{{ $l->title }}" data-slug="{{ $l->slug }}">
             <i class="fa-solid fs-3 fa-square-xmark text-danger"></i>

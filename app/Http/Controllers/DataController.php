@@ -13,19 +13,26 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        if (!Auth::check()){
-            return redirect('login');
-        }
-
-        $list = Data::get();
-
-        $data = [
-            'list' => $list
-        ];
-        return view('list.index', $data);
+    public function index(Request $request)
+{
+    if (!Auth::check()){
+        return redirect('login');
     }
+
+    $sort_by = $request->query('sort_by', 'id');
+    $sort_order = $request->query('sort_order', 'asc');
+
+    $list = Data::orderBy($sort_by, $sort_order)->get();
+
+    $data = [
+        'list' => $list,
+        'sort_by' => $sort_by,
+        'sort_order' => $sort_order,
+    ];
+
+    return view('list.index', $data);
+}
+
 
     /**
      * Show the form for creating a new resource.
