@@ -5,10 +5,10 @@
 
 @section('title', 'Listify')
 <div class="bg-dark py-5" style="height:100vh;">
-<h1 style="font-size: 4rem;" class="text-white fw-bold text-center"><i class="fa-solid fa-list me-1" style="color: #ffffff; font-size: 3.5rem;"></i>Listify</h1>
+<h1 style="font-size: 4rem;" class="text-white text-center display-1">Listify</h1>
   <div class="col-md-3 mx-auto my-5">
     <div class="card">
-      <div class="card-header text-center fs-2 fw-bold">
+      <div class="card-header text-center display-6">
         Welcome Back!
       </div>
       <div class="card-body">
