@@ -1,7 +1,7 @@
 <header class="p-3 text-bg-dark">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <h3 class="fw-bold"><i class="fa-solid fa-list me-1" style="color: #ffffff;"></i>Listify</h3>
+      <h3 class="display-5 fs-2">Listify</h3>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       </ul>
