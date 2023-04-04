@@ -10,7 +10,7 @@
         <thead>
           <tr class="table-active">
             <th scope="col" class="text-center ">
-              <a class="link-underline link-underline-opacity-0 text-white" href="{{ url()->current() }}?sort_by=id&sort_order={{ $sort_by == 'id' && $sort_order == 'asc' ? 'desc' : 'asc' }}">#</a>
+              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=created_at&sort_order={{ $sort_by == 'created_at' && $sort_order == 'asc' ? 'desc' : 'asc' }}">#</a>
             </th>
             <th scope="col">
               <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=title&sort_order={{ $sort_by == 'title' && $sort_order == 'asc' ? 'desc' : 'asc' }}">First</a>
@@ -20,28 +20,28 @@
             </th>
             <th scope="col"></th>
           </tr>
+
         </thead>
 
       </tr>
     </thead>
     <tbody>
-      @foreach($list as $key => $l)
+      @php($number=1)
+      @foreach ($list as $l)
       <tr>
-        <th scope="row" class="text-center">{{ $l->id }}</th>
-
+        <td class="text-center">{{ $number }}</td>
         <td>{{ $l->title }}</td>
-        <td>
-          <textarea class="form-control" style="background-color:transparent; color:white; border-width:0px; font-size:10px; resize:none;" name="description" readonly>{{ $l->description }}</textarea>
-        </td>
-        <td class="text-end fs-4 d-flex justify-content-end py-3">
+        <td>{{ $l->description }}</td>
+        <td class="text-end fs-4 d-flex justify-content-end">
           <a href="{{ url("list/{$l->slug}/edit")}}"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
           <button type="button" class="btn delete-btn" style="--bs-btn-padding-y: .3rem; --bs-btn-padding-x: .3rem;" data-title="{{ $l->title }}" data-slug="{{ $l->slug }}">
             <i class="fa-solid fs-3 fa-square-xmark text-danger"></i>
           </button>
         </td>
-
       </tr>
+      @php($number++)
       @endforeach
+
     </tbody>
   </table>
   <a href="{{ url('list/create')}}" class="btn btn-dark">Add +</a>
