@@ -12,7 +12,7 @@
             {{ Auth::user()->name}}
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="{{ ('login') }}">Logout</a></li>
+            <li><a class="dropdown-item" href="{{ ('logout') }}">Logout</a></li>
           </ul>
         </div>
       </div>
