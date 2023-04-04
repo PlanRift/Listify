@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="fw-light  my-4">Your Table</h1>
-<div class="mx-auto text-end" style="width: 90vw;">
+<div class="mx-auto text-end">
   <table class="table table-dark my-3 mx-auto text-start">
     <thead>
       <tr class="table-active">
@@ -27,16 +27,19 @@
     <tbody>
       @foreach($list as $key => $l)
       <tr>
-        <th scope="row" class="py-3 text-center">{{ $l->id }}</th>
+        <th scope="row" class="text-center">{{ $l->id }}</th>
 
-        <td class="py-3">{{ $l->title }}</td>
-        <td class="py-3">{{ $l->description }}</td>
-        <td class="text-end fs-4">
+        <td>{{ $l->title }}</td>
+        <td>
+          <textarea class="form-control" style="background-color:transparent; color:white; border-width:0px; font-size:10px; resize:none;" name="description" readonly>{{ $l->description }}</textarea>
+        </td>
+        <td class="text-end fs-4 d-flex justify-content-end py-3">
           <a href="{{ url("list/{$l->slug}/edit")}}"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
           <button type="button" class="btn delete-btn" style="--bs-btn-padding-y: .3rem; --bs-btn-padding-x: .3rem;" data-title="{{ $l->title }}" data-slug="{{ $l->slug }}">
             <i class="fa-solid fs-3 fa-square-xmark text-danger"></i>
           </button>
         </td>
+
       </tr>
       @endforeach
     </tbody>
