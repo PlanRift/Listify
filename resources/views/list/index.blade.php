@@ -10,10 +10,10 @@
         <thead>
           <tr class="table-active">
             <th scope="col" class="text-center ">
-              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=created_at&sort_order={{ $sort_by == 'created_at' && $sort_order == 'asc' ? 'desc' : 'asc' }}">#</a>
+              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=created_at&sort_order={{ $sort_by == 'created_at' && $sort_order == 'asc' ? 'desc' : 'asc' }}">No.</a>
             </th>
             <th scope="col">
-              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=title&sort_order={{ $sort_by == 'title' && $sort_order == 'asc' ? 'desc' : 'asc' }}">First</a>
+              <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=title&sort_order={{ $sort_by == 'title' && $sort_order == 'asc' ? 'desc' : 'asc' }}">Title</a>
             </th>
             <th scope="col">
               <a class="link-underline link-underline-opacity-0 text-white" href="?sort_by=description&sort_order={{ $sort_by == 'description' && $sort_order == 'asc' ? 'desc' : 'asc' }}">Description</a>
