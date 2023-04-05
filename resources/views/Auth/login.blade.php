@@ -26,7 +26,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="passwordInput" name="password">
           </div>
-          <div class="text-center">
+          <div class="text-center d-grid">
             <button type="submit" class="btn btn-dark">Login</button>
             <h5>or</h5>
             <a href="{{ url('register')}}" class="btn btn-warning">Register</a>
