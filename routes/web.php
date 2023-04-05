@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('login', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'authenticate']);
 Route::get('logout', [AuthController::class, 'logout']);
+Route::get('list/logout', [AuthController::class, 'logout']);
+Route::get('list/{slug}/logout', [AuthController::class, 'logout']);
 Route::get('register', [AuthController::class, 'registration']);
 Route::post('register', [AuthController::class, 'register']);
 
