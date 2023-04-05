@@ -59,12 +59,10 @@ class DataController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
-        $title = $request->input('title');
-        $description = $request->input('description');
 
         Data::create([
-            'title' => $title,
-            'description' => $description,
+            'title' => $request->input('title'),
+            'description' =>  $request->input('description'),
         ]);
 
         return redirect('list');
@@ -114,12 +112,10 @@ class DataController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
-        $title = $request->input('title');
-        $description = $request->input('description');
-
+        
         Data::slugSelect($slug)->update([
-            'title' => $title,
-            'description' => $description
+            'title' => $request->input('title'),
+            'description' => $$request->input('description')
         ]);
 
 
