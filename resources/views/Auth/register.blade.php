@@ -16,7 +16,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ url('register')}}">
+        <form method="POST" action="{{ route('register')}}">
           @csrf
 
           @if (session()->has('error_message'))

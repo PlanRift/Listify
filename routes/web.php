@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Login Register
-Route::get('login', [AuthController::class, 'login']);
-Route::post('login', [AuthController::class, 'authenticate']);
-Route::get('logout', [AuthController::class, 'logout']);
-Route::get('list/logout', [AuthController::class, 'logout']);
-Route::get('list/{slug}/logout', [AuthController::class, 'logout']);
-Route::get('register', [AuthController::class, 'registration']);
-Route::post('register', [AuthController::class, 'register']);
+// Route::get('login', [AuthController::class, 'login']);
+// Route::post('login', [AuthController::class, 'authenticate']);
+// Route::get('logout', [AuthController::class, 'logout']);
+// Route::get('list/logout', [AuthController::class, 'logout']);
+// Route::get('list/{slug}/logout', [AuthController::class, 'logout']);
+// Route::get('register', [AuthController::class, 'registration'])->name('register');
+// Route::post('register', [AuthController::class, 'register']);
 
 // Main Page
 Route::get('list', [DataController::class, 'index']);
