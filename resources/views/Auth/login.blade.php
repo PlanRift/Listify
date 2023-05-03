@@ -18,6 +18,7 @@
           @if (session()->has('error_message'))
           <div class="alert alert-danger">{{ session()->get('error_message') }}</div>
           @endif
+          
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email">
@@ -25,7 +26,11 @@
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="passwordInput" name="password">
+            @if($errors->has('email'))
+            <small class="text-danger">wrong email or password</small>
+            @endif
           </div>
+          
           <div class="text-center d-grid">
             <button type="submit" class="btn btn-dark">Login</button>
             <h5>or</h5>
