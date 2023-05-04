@@ -14,11 +14,14 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
 
         $sort_by = $request->query('sort_by', 'id');
         $sort_order = $request->query('sort_order', 'asc');
@@ -42,9 +45,9 @@ class DataController extends Controller
      */
     public function create()
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
         return view('list.create');
     }
 
@@ -56,9 +59,9 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         Data::create([
             'title' => $request->input('title'),
@@ -87,9 +90,9 @@ class DataController extends Controller
      */
     public function edit($slug)
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
         $selected_table = Data::slugSelect($slug)
             ->first();
 
@@ -109,9 +112,9 @@ class DataController extends Controller
      */
     public function update(Request $request, $slug)
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
         
         Data::slugSelect($slug)->update([
             'title' => $request->input('title'),
@@ -130,9 +133,9 @@ class DataController extends Controller
      */
     public function destroy($slug)
     {
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
         Data::slugSelect($slug)->delete();
 
         return redirect('list');
