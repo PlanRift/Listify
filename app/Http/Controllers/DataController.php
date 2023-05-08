@@ -18,6 +18,8 @@ class DataController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('is_admin');
+        $this->middleware('verified');
     }
     
     public function index(Request $request)
